@@ -1,0 +1,5 @@
+---
+# vars file for terraform
+
+name: "hadoopmaster.zippyops.com"
+emp: "zippyops"

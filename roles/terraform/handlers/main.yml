@@ -1,0 +1,32 @@
+---
+# handlers file for terraform
+
+- terraform:
+    force_init: yes
+    project_path: '/etc/ansible/roles/test'
+    plan_file: "/etc/ansible/roles/test/plan.tfstate" 
+#    variables:
+#      name: ps
+#      host_prefix: foo
+#    variables_file: /etc/ansible/roles/test/vars.tfvars
+    state: planned
+#    backend_config_files:
+#      - /etc/ansible/roles/test/.terraform 
+#  register: outputs
+#  listen: "terraform apply"
+
+
+- terraform:
+    force_init: yes
+    project_path: '/etc/ansible/roles/test'
+#    plan_file: "/etc/ansible/roles/test/plan.tfstate"
+#    variables:
+#      name: ps
+#      host_prefix: foo
+#    variables_file: vars.tfvars
+  register: outputs
+  listen: "terraform apply"
+
+- debug: var=outputs
+  listen: "terraform apply"
+
